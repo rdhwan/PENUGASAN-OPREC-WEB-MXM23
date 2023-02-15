@@ -20,7 +20,7 @@
 
 .c {
     flex: 1;
-    background: yellow;
+    background: greenyellow;
     display: flex;
 }
 
@@ -63,4 +63,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: white;
+    font-family: monospace;
+    /* font-weight: bold; */
+    /* opacity: 0.5; */
   }
