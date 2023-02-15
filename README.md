@@ -1,8 +1,9 @@
-# Nth Prime Number Finder
+# Penugasan OPREC WEB Maxima 2023
 
-Dengan menggunakan algorithma ***sieve of eratosthenes*** untuk menemukan prime number ke-n.
+Repo ini berisikan penugasan OPREC Web Maxima 2023, oleh Muhammad Fathan Ridhwan - 00000069524.
 
-Example:
-```sh
-python3 find.py 20210
-```
+Berisikan 3 tugas yaitu,
+1. Nth Prime Number Finder
+2. CSS Flex
+3. Quotes Page
+
