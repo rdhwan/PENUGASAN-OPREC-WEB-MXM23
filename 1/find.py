@@ -25,7 +25,7 @@ def sieve_of_eratosthenes(n: int) -> int:
         if primes[p]:
             counter += 1
 
-            for i in range(p * p, n * 10, p):
+            for i in range(p * p, n * 100, p):
                 primes[i] = False
 
         p += 1
