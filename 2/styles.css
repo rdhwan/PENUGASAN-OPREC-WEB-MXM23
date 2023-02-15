@@ -1,0 +1,55 @@
+* {
+    gap: 16px
+}
+
+.main {
+    display: flex;
+    background: grey;
+    height: 100vh;
+    padding: 16px;
+}
+
+
+.a {
+    flex: 1;
+    background: red;
+
+}
+
+.b {
+    flex: 2;
+    flex-direction: column;
+    display: flex;
+
+}
+
+.c {
+    flex: 1;
+    background: yellow;
+}
+
+.d {
+    flex: 1;
+    display: flex;
+}
+
+.e {
+    flex: 1;
+    background: pink;
+}
+
+.f {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.g1 {
+    flex: 1;
+    background: lightblue
+}
+
+.g2 {
+    flex: 1;
+    background: lightblue;
+}
