@@ -67,11 +67,10 @@ PRIMES = [
 
 
 def test_find() -> None:
-    for idx, prime in enumerate(PRIMES):
-        assert sieve_of_eratosthenes(idx + 1) == prime, f"Error, harusnya {prime}"
+    for i, prime in enumerate(PRIMES, 1):
+        assert sieve_of_eratosthenes(i) == prime, f"Error, harusnya {prime}"
 
 
 if __name__ == "__main__":
-
     test_find()
     print("Done")
