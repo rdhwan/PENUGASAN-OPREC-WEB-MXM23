@@ -7,5 +7,5 @@ interface Thumbnail {
 export interface IBiography {
   title: string;
   extract: string;
-  thumbnail: Thumbnail;
+  thumbnail?: Thumbnail;
 }
