@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <body className="bg-green-100">
-        <div className="bg-index bg-cover bg-fixed bg-no-repeat bg-opacity-50">
+        <div className="bg-index bg-fill md:bg-cover bg-fixed bg-right md:bg-center bg-no-repeat">
           <Main />
           <NextScript />
         </div>
