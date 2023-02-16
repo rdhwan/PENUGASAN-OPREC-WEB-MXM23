@@ -72,7 +72,7 @@ export default function Home() {
               {bio.title.toUpperCase()}
             </span>
             <p className="font-yrsa whitespace-normal overflow-hidden text-justify text-lg">
-              {desc}.
+              {desc.slice(-1) == '.' ? desc : desc + '.'}
             </p>
           </div>
 
