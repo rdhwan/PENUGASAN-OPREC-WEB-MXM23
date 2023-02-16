@@ -30,7 +30,7 @@ export default function Home() {
 
   const generateQuotes = () => {
     axios
-      .get(quotableApiUrl + "/random?minLength=50&maxLength=100")
+      .get(quotableApiUrl + "/random?&maxLength=100")
       .then((res: AxiosResponse<IQuotes>) => {
         setQuotesData(res.data);
         getBio(res.data.author);
