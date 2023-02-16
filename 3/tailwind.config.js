@@ -9,9 +9,13 @@ module.exports = {
     extend: {
       fontFamily: {
         montserrat: ["Montserrat"],
+        playfair: ["Playfair Display"],
+        yrsa: ["yrsa"]
       },
       backgroundImage: {
         index: "url('/background.png')",
+        "index-50": "url(/background-50.png)",
+        "index-75": "url(/background-75.png)",
       },
     },
   },
