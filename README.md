@@ -7,3 +7,5 @@ Berisikan 3 tugas yaitu,
 2. CSS Flex
 3. Quotes Page
 
+## NOTES
+Contributor 'kleizen' itu saya sendiri, soalnya di pc saya typo user.email nya :). Tapi di laptop usernya bener. 
