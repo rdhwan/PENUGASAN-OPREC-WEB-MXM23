@@ -78,12 +78,12 @@ export default function Home(props: InitialQuotesProps) {
           </div>
         </div>
         <button
-          className={`text-center py-4 px-4 transition-transform ease-in duration-200 ${
+          className={`fixed bottom-0 left-1/2 transform -translate-x-1/2 text-center py-4 px-4 transition-transform ease-in duration-200 ${
             showButton ? "scale-100" : "scale-0"
           }`}
           onClick={generateQuotes}
         >
-          <div className=" flex-none p-2 bg-green-200 items-center leading-none rounded-full inline-flex scale-100 hover:scale-110 ease-in duration-200">
+          <div className="p-2 bg-green-200 items-center leading-none rounded-full scale-100 hover:scale-110 ease-in duration-200">
             <span className="text-center flex-auto">
               Click me to <span className="font-bold">regenerate</span>
             </span>
