@@ -64,9 +64,9 @@ export default function Home(props: InitialQuotesProps) {
             </p>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-4 sm:mt-0">
             <Image
-              className="h-56 w-full sm:w-48 p-0 sm:p-2 object-top sm:object-center object-cover rounded-3xl"
+              className="h-56 w-full sm:w-48 p-2 object-top sm:object-center object-cover rounded-3xl"
               src={
                 bio.thumbnail?.source ? bio.thumbnail?.source : "/no-image.jpg"
               }
@@ -74,7 +74,7 @@ export default function Home(props: InitialQuotesProps) {
               height={bio.thumbnail?.height ? bio.thumbnail?.height : 100}
               alt={bio.title}
             />
-            <div className="absolute inset-0 border-2 rounded-3xl outline-green-200 hidden sm:block"></div>
+            <div className="absolute inset-0 border-2 rounded-3xl outline-green-200 block"></div>
           </div>
         </div>
         <button
