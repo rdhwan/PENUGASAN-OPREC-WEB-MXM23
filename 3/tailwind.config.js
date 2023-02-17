@@ -8,9 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat"],
-        playfair: ["Playfair Display"],
-        yrsa: ["yrsa"]
+        serif: ["Playfair Display", "serif"],
+        sans: ["Inter", 'sans-serif']
       },
       backgroundImage: {
         index: "url('/background.png')",
