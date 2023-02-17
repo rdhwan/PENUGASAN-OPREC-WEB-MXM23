@@ -1,55 +1,43 @@
-import { IBiography } from "@/interface/biography";
-import { IQuotes } from "@/interface/quotes";
+import { IBiography } from "@/interface/biographyModel";
+import { IQuotes } from "@/interface/quotesModel";
+import { InitialQuotesProps } from "@/interface/propsModel";
 import Image from "next/image";
 import axios, { AxiosResponse } from "axios";
 import { useState, useEffect } from "react";
-import { idText } from "typescript";
 
 const quotableApiUrl = "https://api.quotable.io";
 const wikipediaApiUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/";
 
-export default function Home() {
-  const [quotes, setQuotesData] = useState<IQuotes>({
-    _id: "",
-    author: "",
-    content: "",
-    length: 0,
-  });
+const getQuotes = () =>
+  axios
+    .get(quotableApiUrl + "/random?&maxLength=100")
+    .then((res: AxiosResponse<IQuotes>) => res.data);
 
-  const [bio, setBioData] = useState<IBiography>({
-    title: "",
-    extract: "",
-    thumbnail: {
-      source: "",
-      width: 0,
-      height: 0,
-    },
-  });
+const getBio = (author: string) =>
+  axios
+    .get(wikipediaApiUrl + encodeURIComponent(author) + "?redirect=false")
+    .then((res: AxiosResponse<IBiography>) => res.data);
+
+export default function Home(props: InitialQuotesProps) {
+  const [quotes, setQuotesData] = useState<IQuotes>(props.quotes);
+
+  const [bio, setBioData] = useState<IBiography>(props.bio);
 
   const [showButton, setShowButton] = useState(false);
 
-  const generateQuotes = () => {
-    axios
-      .get(quotableApiUrl + "/random?&maxLength=100")
-      .then((res: AxiosResponse<IQuotes>) => {
-        setQuotesData(res.data);
-        getBio(res.data.author);
-      });
+  const generateQuotes = async () => {
+    const quotes = await getQuotes();
+    const bio = await getBio(quotes.author);
+
+    setQuotesData(quotes);
+    setBioData(bio);
   };
 
-  const getBio = (author: string) =>
-    axios
-      .get(wikipediaApiUrl + encodeURIComponent(author) + "?redirect=false")
-      .then((res) => setBioData(res.data));
-
   useEffect(() => {
-    generateQuotes();
     setTimeout(() => {
       setShowButton(true);
     }, 3000);
-  }, []); // disabled while styling
-
-  console.log(bio);
+  }, []);
 
   const extract = bio.extract.split(".");
   const desc =
@@ -72,7 +60,7 @@ export default function Home() {
               {bio.title.toUpperCase()}
             </span>
             <p className="font-yrsa whitespace-normal overflow-hidden text-justify text-lg">
-              {desc.slice(-1) == '.' ? desc : desc + '.'}
+              {desc.slice(-1) == "." ? desc : desc + "."}
             </p>
           </div>
 
@@ -104,4 +92,16 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const quotes = await getQuotes();
+  const bio = await getBio(quotes.author);
+
+  return {
+    props: {
+      quotes: quotes,
+      bio: bio,
+    },
+  };
 }
