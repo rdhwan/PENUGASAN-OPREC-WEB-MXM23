@@ -49,7 +49,7 @@ export default function Home(props: InitialQuotesProps) {
         <div className="flex-shrink">
           <span className="font-sans font-bold text-xl">quotify.</span>
         </div>
-        <div className="flex flex-grow my-16 items-center">
+        <div className="flex flex-grow my-8 items-center">
           <span className="font-serif font-bold text-4xl xl:text-7xl md:text-6xl sm:text-4xl">
             &#34;{quotes.content}&#34;
           </span>
